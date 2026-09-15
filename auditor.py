@@ -9,3 +9,10 @@ while True:
     if not stock.isdigit():
         print("Invalid input")
         continue
+
+    stock = int(stock)
+    if stock < 0:
+        print("Invalid input")
+        continue
+
+

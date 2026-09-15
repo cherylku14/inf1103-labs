@@ -6,13 +6,15 @@ while True:
     if stock == "quit":
         break
 
-    if not stock.isdigit():
+    elif not stock.isdigit():
         print("Invalid input")
         continue
 
-    stock = int(stock)
-    if stock < 0:
-        print("Invalid input")
-        continue
+    else:
+        stock = int(stock)
 
     inventory += stock
+
+    if inventory > 500:
+        print("Overstock Alert!")
+        break

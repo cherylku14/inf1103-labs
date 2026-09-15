@@ -5,3 +5,7 @@ while True:
 
     if stock == "quit":
         break
+
+    if not stock.isdigit():
+        print("Invalid input")
+        continue

@@ -17,12 +17,26 @@ failed_entries = 0
 # result = get_valid_input()
 # print(result)
 
-def process_delivery(current_total, new_value):
-    updated_total = new_value + current_total
-    return updated_total
+# def process_delivery(current_total, new_value):
+#     updated_total = new_value + current_total
+#     return updated_total
 
-delivery = process_delivery(400,150)
-print(delivery)
+# delivery = process_delivery(400,150)
+# print(delivery)
+
+def calculate_tax(amount):
+    tax = amount * 0.1
+    return tax
+
+print(calculate_tax(200))
+
+
+
+
+
+
+
+
 
 
 # while True:

@@ -13,6 +13,14 @@ def load_inventory():
 
 inventory = load_inventory()
 
+
+def save_inventory(inventory, transaction_history):
+    file = open("inventory.txt", "w")
+    file.write(str(inventory) + "\n")
+    file.write(str(transaction_history))
+    file.close()
+
+
 def get_valid_input():
     stock = input("Enter a stock quantity (or 'quit'): ")
 
@@ -60,6 +68,7 @@ while True:
     stock = get_valid_input()
 
     if stock == 'quit':
+        save_inventory(inventory, transaction_history)
         break
 
     elif stock is None:

@@ -1,5 +1,16 @@
-inventory = 0
+# inventory = 0
 failed_entries = 0
+
+def load_inventory():
+    try:
+        file = open("inventory.txt", "r")
+        inventory = int(file.readline())
+        file.close()
+        return inventory
+    except FileNotFoundError:
+        return 0
+
+inventory = load_inventory()
 
 def get_valid_input():
     stock = input("Enter a stock quantity (or 'quit'): ")

@@ -1,5 +1,6 @@
 # inventory = 0
 failed_entries = 0
+transaction_history = []
 
 def load_inventory():
     try:
@@ -64,7 +65,8 @@ while True:
     elif stock is None:
         failed_entries += 1
         continue
-
+    
+    transaction_history.append(stock)
     inventory = process_delivery(inventory, stock)
     tax_amount = calculate_tax(stock)
     if inventory > 500:
@@ -72,5 +74,5 @@ while True:
         break
 
 generate_report(inventory, failed_entries)
-
+print("Transaction History:", transaction_history)
 

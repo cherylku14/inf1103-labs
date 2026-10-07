@@ -1,3 +1,6 @@
+import json
+
+"""
 inventory = [
     {
         "id": "P001",
@@ -18,5 +21,21 @@ inventory = [
         "stock": 25
     }
 ]
+"""
 
+def load_inventory():
+    try:
+        file = open("inventory.json", "r")
+        inventory = json.load(file)
+        file.close()
+        print("inventory.json found.")
+        print("Inventory loaded successfully.")
+        return inventory
+
+    except FileNotFoundError:
+        print("inventory.json not found")
+        return []
+
+
+inventory = load_inventory()
 print(inventory)

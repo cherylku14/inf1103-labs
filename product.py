@@ -7,6 +7,14 @@ class Product:
 
     def get_product_id(self):
         return self.__product_id
+
+    def to_dict(self):
+        return {
+            "product_id":self.__product_id,
+            "name":self.__name,
+            "price": self.__price,
+            "stock":self.__stock
+        }
     
     def update_stock(self, quantity):
         self.__stock = quantity

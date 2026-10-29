@@ -2,6 +2,9 @@ class Inventory:
     def __init__(self):
         self.__products = []
 
+    def get_all_product(self):
+        return self.__products
+
     def add_product(self, product):
         self.__products.append(product)
         print("Product added successfully!")

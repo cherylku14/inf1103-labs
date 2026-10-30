@@ -66,12 +66,26 @@ while True:
         print("Add new Product")
 
         product_id = input("Product ID: ")
-        name = input("Product Name: ")
-        price =  float(input("Price: "))
-        stock = int(input("Stock quantity: "))
 
-        new_product = Product(product_id, name, price, stock)
-        inventory.add_product(new_product)
+        if inventory.search_product(product_id) is not None:
+            print("Product ID already exists!")
+
+        else: 
+            name = input("Product Name: ")
+
+            try:
+                price =  float(input("Price: "))
+                stock = int(input("Stock quantity: "))
+
+                if price <0 or stock < 0:
+                    print("Price and stock cannot be negative.")
+
+                else:
+                    new_product = Product(product_id, name, price, stock)
+                    inventory.add_product(new_product)
+
+            except ValueError:
+                print("Invalid input. Price and stock must be numbers.")
 
     elif option == "3":
         print("Update Stock")
@@ -83,10 +97,18 @@ while True:
             print("Product Found:")
             product.display_information()
 
-            new_stock = int(input("New Stock Quantity: "))
-            product.update_stock(new_stock)
+            try:
+                new_stock = int(input("New Stock Quantity: "))
 
-            print("Stock updated successfully!")
+                if new_stock < 0:
+                    print("Stock cannot be negative.")
+
+                else:
+                    product.update_stock(new_stock)
+                    print("Stock updated successfully!")
+            
+            except ValueError:
+                print("Invalid input. Stock must be a number.")
 
         else:
             print("Product not found.")

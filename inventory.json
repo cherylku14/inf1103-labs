@@ -3,7 +3,7 @@
         "product_id": "P001",
         "name": "Laptop",
         "price": 1200.0,
-        "stock": 20
+        "stock": 30
     },
     {
         "product_id": "P002",
@@ -16,5 +16,11 @@
         "name": "Keyboard",
         "price": 45.0,
         "stock": 25
+    },
+    {
+        "product_id": "P004",
+        "name": "Monitor",
+        "price": 299.99,
+        "stock": 10
     }
 ]

@@ -38,5 +38,13 @@
         "stock": 50,
         "type": "digital",
         "download_size": 500.0
+    },
+    {
+        "product_id": "P005",
+        "name": "Printer",
+        "price": 150.0,
+        "stock": 8,
+        "type": "physical",
+        "weight": 3.5
     }
 ]

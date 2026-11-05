@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+inventory_backup.json
+.venv/
+venv/
+.env
+.vscode/
+.idea/
